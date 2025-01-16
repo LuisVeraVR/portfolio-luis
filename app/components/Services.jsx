@@ -17,7 +17,7 @@ function Services() {
           desarrollo de aplicaciones web y móviles. Experiencia en creacion de
           software de calidad, escalable y mantenible.
         </p>
-        <div className="grid grid-cols-4 gap-6 my-10">
+        <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 my-10">
             {serviceData.map(({icon, title, description, link}, index) => (
                 <div className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500" key={index}>
                     <Image src={icon} alt="" className="w-10" />

@@ -12,10 +12,10 @@ function About() {
         <h4 className="text-center mb-2 text-lg font-Ovo">Introducción</h4>
         <h2 className="text-center text-5xl font-Ovo">Sobre mí</h2>
 
-        <div className="flex w-full flex-col lg:flex-row items-center justify-center gap-20 my-20">
+        <div className="flex w-full flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row items-center justify-center gap-10 lg:gap-10 xl:gap-20 my-20">
           <div className="w-64 sm:w-80 rounded-3xl max-w-none">
             <Image
-              src={assets.user_image}
+              src={assets.larger_user_image}
               alt="user"
               className="w-full rounded-3xl"
             />
@@ -38,7 +38,6 @@ function About() {
                     className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500 hover:shadow-black"
                     key={index}
                   >
-                    {/* Icon es ahora un componente de Lucide */}
                     <Icon className="w-8 h-8 text-gray-700" />
                     <h3 className="my-4 font-semibold text-gray-700">
                       {title}

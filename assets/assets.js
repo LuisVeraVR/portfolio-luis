@@ -1,4 +1,3 @@
-import user_image from './user-image.png';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
 import edu_icon from './edu-icon.png';
@@ -36,133 +35,134 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import azure from './azure.png';
+import user_image from './user_image.png';
+import larger_user_image from './larger_user_image.png';
 
 import {
-    Globe2,         // Para Web design
-    Smartphone,      // Para Mobile app
-    Paintbrush2,     // Para UI/UX design
-    Brush,           // Para Graphics design
-    Code2,           // Para lenguajes de programación
-    GraduationCap,   // Para educación
-    FolderArchive,   // Para proyectos
-    Database,        // Para MongoDB
-    Figma,
-    GitBranch,       // Para Git
-    Cloud            // Para Azure
-  } from "lucide-react";
+  Globe2, // Para Web design
+  Smartphone, // Para Mobile app
+  Paintbrush2, // Para UI/UX design
+  Brush, // Para Graphics design
+  Code2, // Para lenguajes de programación
+  GraduationCap, // Para educación
+  FolderArchive, // Para proyectos
+  Database, // Para MongoDB
+  Figma,
+  GitBranch, // Para Git
+  Cloud // Para Azure
+} from "lucide-react";
 
 export const assets = {
-    user_image,
-    code_icon,
-    code_icon_dark,
-    edu_icon,
-    edu_icon_dark,
-    project_icon,
-    project_icon_dark,
-    vscode,
-    firebase,
-    figma,
-    git,
-    mongodb,
-    right_arrow_white,
-    logo,
-    logo_dark,
-    mail_icon,
-    mail_icon_dark,
-    profile_img,
-    download_icon,
-    hand_icon,
-    header_bg_color,
-    moon_icon,
-    sun_icon,
-    arrow_icon,
-    arrow_icon_dark,
-    menu_black,
-    menu_white,
-    close_black,
-    close_white,
-    web_icon,
-    mobile_icon,
-    ui_icon,
-    graphics_icon,
-    right_arrow,
-    send_icon,
-    right_arrow_bold,
-    right_arrow_bold_dark,
-    azure
+  code_icon,
+  code_icon_dark,
+  edu_icon,
+  edu_icon_dark,
+  project_icon,
+  project_icon_dark,
+  vscode,
+  firebase,
+  figma,
+  git,
+  mongodb,
+  right_arrow_white,
+  logo,
+  logo_dark,
+  mail_icon,
+  mail_icon_dark,
+  profile_img,
+  download_icon,
+  hand_icon,
+  header_bg_color,
+  moon_icon,
+  sun_icon,
+  arrow_icon,
+  arrow_icon_dark,
+  menu_black,
+  menu_white,
+  close_black,
+  close_white,
+  web_icon,
+  mobile_icon,
+  ui_icon,
+  graphics_icon,
+  right_arrow,
+  send_icon,
+  right_arrow_bold,
+  right_arrow_bold_dark,
+  azure,
+  user_image,
+  larger_user_image
 };
 
-export const workData = [
-    {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
-    },
-    {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-    },
-    {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
-]
-
-export const serviceData = [
+export const workData = [{
+    title: 'Proyecto de Frontend',
+    description: 'Diseño Web',
+    bgImage: '/work-1.png',
+  },
   {
+    title: 'Aplicación basada en geolocalización',
+    description: 'Aplicación Móvil',
+    bgImage: '/work-2.png',
+  },
+  {
+    title: 'Sistema de gestión de usuarios',
+    description: 'Desarrollo Web',
+    bgImage: '/work-3.png',
+  },
+  {
+    title: 'Diseño UI/UX',
+    description: 'Diseño UI/UX',
+    bgImage: '/work-4.png',
+  },
+];
+
+export const serviceData = [{
     icon: Globe2,
-    title: "Web design",
-    description: "Web development is the process of building, programming...",
+    title: "Diseño Web",
+    description: "El desarrollo web implica construir, programar y optimizar sitios web...",
     link: "",
   },
   {
     icon: Smartphone,
-    title: "Mobile app",
-    description: "Mobile app development involves creating software for mobile devices...",
+    title: "Aplicaciones Móviles",
+    description: "El desarrollo de aplicaciones móviles consiste en crear software para dispositivos móviles...",
     link: "",
   },
   {
     icon: Paintbrush2,
-    title: "UI/UX design",
-    description: "UI/UX design focuses on creating a seamless user experience...",
+    title: "Diseño UI/UX",
+    description: "El diseño UI/UX se enfoca en crear experiencias de usuario intuitivas y atractivas...",
     link: "",
   },
   {
     icon: Brush,
-    title: "Graphics design",
-    description: "Creative design solutions to enhance visual communication...",
+    title: "Diseño Gráfico",
+    description: "Soluciones creativas de diseño para mejorar la comunicación visual...",
     link: "",
   },
 ];
 
-export const infoList = [
-    {
-      icon: Code2,
-      iconDark: Code2,
-      title: "Languages",
-      description: "HTML, CSS, JavaScript, React Js, Next Js",
-    },
-    {
-      icon: GraduationCap,
-      iconDark: GraduationCap,
-      title: "Education",
-      description: "B.Tech in Computer Science",
-    },
-    {
-      icon: FolderArchive,
-      iconDark: FolderArchive,
-      title: "Projects",
-      description: "Built more than 5 projects",
-    },
-  ];
+export const infoList = [{
+    icon: Code2,
+    iconDark: Code2,
+    title: "Tecnologías",
+    description: "Angular, React, JavaScript, TypeScript, Next.js, HTML, CSS",
+  },
+  {
+    icon: GraduationCap,
+    iconDark: GraduationCap,
+    title: "Educación",
+    description: "Graduado en Tecnología en Desarrollo de Software en la Universidad Católica de Cali (Lumen Gentium)",
+  },
+  {
+    icon: FolderArchive,
+    iconDark: FolderArchive,
+    title: "Proyectos",
+    description: "He trabajado en 2 proyectos",
+  },
+];
+
 
 export const toolsData = [
-    assets.vscode, assets.azure, assets.mongodb, assets.figma, assets.git
+  assets.vscode, assets.azure, assets.mongodb, assets.figma, assets.git
 ];
