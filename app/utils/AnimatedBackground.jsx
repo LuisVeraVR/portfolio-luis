@@ -26,7 +26,7 @@ const AnimatedBackground = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed -z-50 inset-0 overflow-hidden pointer-events-none">
       {dots.map((dot, index) => (
         <motion.div
           key={index}

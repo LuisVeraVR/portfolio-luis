@@ -47,9 +47,8 @@ const Navbar = () => {
           className="text-3xl font-bold mr-14 relative overflow-hidden group font-Ovo"
           initial="initial"
           animate="animate"
-          whileHover="hover"
         >
-          {["L", "u", "i", "s", " ", "V", "e", "r", "a"].map((letter, index) => (
+          {["L", "u", "i", "s", "", "V", "e", "r", "a"].map((letter, index) => (
             <motion.span
               key={index}
               variants={letterVariants}

@@ -13,21 +13,28 @@ function Services() {
         <h2 className="text-center text-5xl font-Ovo">Mis habilidades</h2>
 
         <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-          Soy un desarrollador Fullstack con 2 (dos) años de experiencia en el
+          Soy un desarrollador Frontend con 2 (dos) años de experiencia en el
           desarrollo de aplicaciones web y móviles. Experiencia en creacion de
           software de calidad, escalable y mantenible.
         </p>
         <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 my-10">
-            {serviceData.map(({icon, title, description, link}, index) => (
-                <div className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500" key={index}>
-                    <Image src={icon} alt="" className="w-10" />
-                    <h3 className="text-lg my-4 text-gray-700">{title}</h3>
-                    <p className="text-sm text-gray-600 leading-5">
-                        {description}
-                    </p>
-                    <a href={link} className="flex items-center gap-2 text-sm mt-5">Leer más <ArrowRight className="w-4"/></a>
+          {serviceData.map(
+            ({ icon: Icon, title, description, link }, index) => (
+              <div
+                className=" border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500"
+                key={index}
+              >
+                <div className="flex justify-center items-center bg-black p-3 w-[50px] rounded-xl">
+                  <Icon className="w-10 text-white" />
                 </div>
-            ))}
+                <h3 className="text-lg my-4 text-gray-700">{title}</h3>
+                <p className="text-sm text-gray-600 leading-5">{description}</p>
+                <a href={link} className="flex items-center gap-2 text-sm mt-5">
+                  Leer más <ArrowRight className="w-4" />
+                </a>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>

@@ -37,6 +37,8 @@ import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import azure from './azure.png';
 import user_image from './user_image.png';
 import larger_user_image from './larger_user_image.png';
+import image_perritos from './image_perritos.jpg';
+import web_notion_example from './organizador_example.png';
 
 import {
   Globe2, // Para Web design
@@ -91,30 +93,10 @@ export const assets = {
   right_arrow_bold_dark,
   azure,
   user_image,
-  larger_user_image
+  larger_user_image,
+  image_perritos,
+  web_notion_example
 };
-
-export const workData = [{
-    title: 'Proyecto de Frontend',
-    description: 'Diseño Web',
-    bgImage: '/work-1.png',
-  },
-  {
-    title: 'Aplicación basada en geolocalización',
-    description: 'Aplicación Móvil',
-    bgImage: '/work-2.png',
-  },
-  {
-    title: 'Sistema de gestión de usuarios',
-    description: 'Desarrollo Web',
-    bgImage: '/work-3.png',
-  },
-  {
-    title: 'Diseño UI/UX',
-    description: 'Diseño UI/UX',
-    bgImage: '/work-4.png',
-  },
-];
 
 export const serviceData = [{
     icon: Globe2,
