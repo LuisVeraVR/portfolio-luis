@@ -1,141 +1,164 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, Instagram, Twitter, Linkedin, Send } from 'lucide-react'
+"use client";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "El nombre debe tener al menos 2 caracteres.",
-  }),   
-  email: z.string().email({
-    message: "Por favor, introduce un email válido.",
-  }),
-  message: z.string().min(10, {
-    message: "El mensaje debe tener al menos 10 caracteres.",
-  }),
-})
-
-const socialLinks = [
-  { name: 'Instagram', icon: Instagram, color: 'bg-gradient-to-r from-purple-500 to-pink-500', link: 'https://www.instagram.com/tu_usuario' },
-  { name: 'Twitter', icon: Twitter, color: 'bg-blue-400', link: 'https://twitter.com/tu_usuario' },
-  { name: 'LinkedIn', icon: Linkedin, color: 'bg-blue-700', link: 'https://www.linkedin.com/in/tu_usuario' },
-]
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Send, Check, X } from "lucide-react";
+import { networkData } from "@/assets/assets";
 
 function Contact() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  })
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
-onSubmit()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form[0].value.trim();
+    const email = form[1].value.trim();
+    const message = form[2].value.trim();
+
+    // Validar campos
+    if (!name || !email || !message) {
+      setErrorMessage(
+        "Por favor, complete todos los campos antes de enviar el formulario."
+      );
+      setSubmitResult("error");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMessage(""); // Limpiar errores previos
+
+    // Enviar formulario a Web3Forms
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "b1206e69-178e-44a6-a3e5-5f2e7dd02662",
+          name: name,
+          email: email,
+          message: message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error en el envío del formulario");
+      }
+
+      setSubmitResult("success");
+    } catch (error) {
+      setErrorMessage(
+        "Hubo un error al enviar el formulario. Por favor, intente nuevamente."
+      );
+      setSubmitResult("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <div className="w-full px-[12%] py-16 bg-gray-50" id="contact">
-      <h2 className="text-center text-4xl font-bold mb-8">Contáctame</h2>
-      <Card className="max-w-4xl mx-auto overflow-hidden">
-        <CardContent className="p-0">
-          <div className="grid md:grid-cols-2">
-            <div className="bg-primary text-primary-foreground p-8">
-              <h3 className="text-2xl font-semibold mb-6">Información de contacto</h3>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-4">
-                  <Mail className="h-6 w-6" />
-                  <a href="mailto:luisveravr.dev@gmail.com" className="hover:underline">
-                    luisveravr.dev@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Phone className="h-6 w-6" />
-                  <a href="tel:+573233653285" className="hover:underline">
-                    +57 323 365 3285
-                  </a>
-                </div>
+    <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 className="text-center mb-2 text-lg font-Ovo">
+        ¿Quieres charlar conmigo?
+      </h4>
+      <h2 className="text-center text-5xl font-Ovo">
+        Contáctame en unos simples pasos
+      </h2>
+
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        Responderé con gusto a tus comentarios, sugerencias o dudas. No dudes en
+        contactarme. Estaré pendiente de cada uno de los mensajes para que
+        podamos estar en contacto directo.
+      </p>
+      <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
+        <div className="grid grid-cols-1 gap-6 mt-10 mb-8">
+          <input
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            type="text"
+            placeholder="Ingresa tu nombre"
+            required
+            onInvalid={(e) =>
+              e.target.setCustomValidity("Por favor, ingresa tu nombre.")
+            }
+            onInput={(e) => e.target.setCustomValidity("")}
+          />
+          <input
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            type="email"
+            placeholder="Ingresa tu email"
+            required
+            onInvalid={(e) =>
+              e.target.setCustomValidity("Por favor, ingresa un email válido.")
+            }
+            onInput={(e) => e.target.setCustomValidity("")}
+          />
+        </div>
+        <textarea
+          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+          rows={6}
+          placeholder="Ingresa tu mensaje"
+          required
+          onInvalid={(e) =>
+            e.target.setCustomValidity("Por favor, escribe tu mensaje.")
+          }
+          onInput={(e) => e.target.setCustomValidity("")}
+        ></textarea>
+        {errorMessage && (
+          <div className="mt-4 text-red-500 text-center">{errorMessage}</div>
+        )}
+        <div className="relative mt-6 flex justify-center">
+          <button
+            className={`w-20 h-12 rounded-full bg-black text-white flex items-center justify-center transition-all duration-300 ${
+              isSubmitting
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-gray-800"
+            }`}
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <div className="w-5 h-5 border-t-2 border-white border-solid rounded-full animate-spin"></div>
+            ) : (
+              <Send className="w-5 h-5" />
+            )}
+          </button>
+          <div
+            className={`absolute top-0 right-0 flex items-center justify-center w-20 h-12 transition-opacity duration-300 ${
+              submitResult ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {submitResult === "success" && (
+              <div className="bg-green-500 rounded-full p-1">
+                <Check className="w-5 h-5 text-white" />
               </div>
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold mb-2">Sígueme en</h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${social.color} p-3 rounded-full text-white hover:opacity-80 transition-opacity`}
-                    >
-                      <social.icon size={24} />
-                    </a>
-                  ))}
-                </div>
+            )}
+            {submitResult === "error" && (
+              <div className="bg-red-500 rounded-full p-1">
+                <X className="w-5 h-5 text-white" />
               </div>
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-semibold mb-6">Envíame un mensaje</h3>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nombre</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Tu nombre" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="tu@email.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Mensaje</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Escribe tu mensaje aquí" 
-                            className="min-h-[120px]"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" className="w-full">
-                    <Send className="mr-2 h-4 w-4" /> Enviar mensaje
-                  </Button>
-                </form>
-              </Form>
-            </div>
+            )}
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </form>
+
+      <ul className="flex items-center gap-3 sm:gap-5 flex-wrap justify-center mt-10">
+        {networkData.map(({ icon, link }, index) => (
+          <li
+            key={index}
+            className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:shadow-black hover:-translate-y-1 transition-transform duration-500"
+          >
+            <Link href={link} target="_blank">
+              <Image src={icon} alt="" className="w-5 sm:w-7" />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
 export default Contact;

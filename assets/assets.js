@@ -39,6 +39,9 @@ import user_image from './user_image.png';
 import larger_user_image from './larger_user_image.png';
 import image_perritos from './image_perritos.jpg';
 import web_notion_example from './organizador_example.png';
+import github from './github-mark.svg'
+import linkedin from './linkedin.svg'
+import instagram from './instagram.svg'
 
 import {
   Globe2, // Para Web design
@@ -48,10 +51,6 @@ import {
   Code2, // Para lenguajes de programación
   GraduationCap, // Para educación
   FolderArchive, // Para proyectos
-  Database, // Para MongoDB
-  Figma,
-  GitBranch, // Para Git
-  Cloud // Para Azure
 } from "lucide-react";
 
 export const assets = {
@@ -95,7 +94,10 @@ export const assets = {
   user_image,
   larger_user_image,
   image_perritos,
-  web_notion_example
+  web_notion_example,
+  github,
+  linkedin,
+  instagram
 };
 
 export const serviceData = [{
@@ -148,3 +150,17 @@ export const infoList = [{
 export const toolsData = [
   assets.vscode, assets.azure, assets.mongodb, assets.figma, assets.git
 ];
+
+export const networkData = [{
+    icon: assets.github,
+    link: "https://github.com/LuisVeraVR"
+  },
+  {
+    icon: assets.linkedin,
+    link: "https://linkedin.com"
+  },
+  {
+    icon: assets.instagram,
+    link: "https://www.instagram.com/luis_v.03/"
+  }
+]

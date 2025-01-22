@@ -21,7 +21,7 @@ function Services() {
           {serviceData.map(
             ({ icon: Icon, title, description, link }, index) => (
               <div
-                className=" border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500"
+                className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500"
                 key={index}
               >
                 <div className="flex justify-center items-center bg-black p-3 w-[50px] rounded-xl">
