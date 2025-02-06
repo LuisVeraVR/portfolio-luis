@@ -1,6 +1,6 @@
 'use client';
 
-import SubtleBackground from "./utils/AnimatedBackground";
+import SubtleBackground from "./components/AnimatedBackground";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import About from "./components/About";

@@ -42,6 +42,8 @@ import web_notion_example from './organizador_example.png';
 import github from './github-mark.svg'
 import linkedin from './linkedin.svg'
 import instagram from './instagram.svg'
+import ukFlag from './uk-flag.png';
+import esFlag from './spain-flag.png';
 
 import {
   Globe2, // Para Web design
@@ -97,54 +99,10 @@ export const assets = {
   web_notion_example,
   github,
   linkedin,
-  instagram
+  instagram,
+  ukFlag,
+  esFlag
 };
-
-export const serviceData = [{
-    icon: Globe2,
-    title: "Diseño Web",
-    description: "El desarrollo web implica construir, programar y optimizar sitios web...",
-    link: "",
-  },
-  {
-    icon: Smartphone,
-    title: "Aplicaciones Móviles",
-    description: "El desarrollo de aplicaciones móviles consiste en crear software para dispositivos móviles...",
-    link: "",
-  },
-  {
-    icon: Paintbrush2,
-    title: "Diseño UI/UX",
-    description: "El diseño UI/UX se enfoca en crear experiencias de usuario intuitivas y atractivas...",
-    link: "",
-  },
-  {
-    icon: Brush,
-    title: "Diseño Gráfico",
-    description: "Soluciones creativas de diseño para mejorar la comunicación visual...",
-    link: "",
-  },
-];
-
-export const infoList = [{
-    icon: Code2,
-    iconDark: Code2,
-    title: "Tecnologías",
-    description: "Angular, React, JavaScript, TypeScript, Next.js, HTML, CSS",
-  },
-  {
-    icon: GraduationCap,
-    iconDark: GraduationCap,
-    title: "Educación",
-    description: "Graduado en Tecnología en Desarrollo de Software en la Universidad Católica de Cali (Lumen Gentium)",
-  },
-  {
-    icon: FolderArchive,
-    iconDark: FolderArchive,
-    title: "Proyectos",
-    description: "He trabajado en 2 proyectos",
-  },
-];
 
 
 export const toolsData = [

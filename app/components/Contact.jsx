@@ -1,15 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Send, Check, X } from "lucide-react";
 import { networkData } from "@/assets/assets";
+import { translations } from "../utils/translations";
+import { useAppContext } from "@/components/context/AppContext";
 
 function Contact() {
+  const { language } = useAppContext();
+  const t = translations[language];
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    setErrorMessage("");
+    setSubmitResult(null);
+  }, [language]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,19 +27,15 @@ function Contact() {
     const email = form[1].value.trim();
     const message = form[2].value.trim();
 
-    // Validar campos
     if (!name || !email || !message) {
-      setErrorMessage(
-        "Por favor, complete todos los campos antes de enviar el formulario."
-      );
+      setErrorMessage(t.contact.errors.requiredFields);
       setSubmitResult("error");
       return;
     }
 
     setIsSubmitting(true);
-    setErrorMessage(""); // Limpiar errores previos
+    setErrorMessage("");
 
-    // Enviar formulario a Web3Forms
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -39,21 +44,19 @@ function Contact() {
         },
         body: JSON.stringify({
           access_key: "b1206e69-178e-44a6-a3e5-5f2e7dd02662",
-          name: name,
-          email: email,
-          message: message,
+          name,
+          email,
+          message,
         }),
       });
 
       if (!response.ok) {
-        throw new Error("Error en el envío del formulario");
+        throw new Error(t.contact.errors.formSubmissionError);
       }
 
       setSubmitResult("success");
     } catch (error) {
-      setErrorMessage(
-        "Hubo un error al enviar el formulario. Por favor, intente nuevamente."
-      );
+      setErrorMessage(t.contact.errors.formSubmissionErrorAgain);
       setSubmitResult("error");
     } finally {
       setIsSubmitting(false);
@@ -62,61 +65,104 @@ function Contact() {
 
   return (
     <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo">
-        ¿Quieres charlar conmigo?
-      </h4>
-      <h2 className="text-center text-5xl font-Ovo">
-        Contáctame en unos simples pasos
-      </h2>
+      <h4 className="text-center mb-2 text-lg font-Ovo">{t.contact.title}</h4>
+      <h2 className="text-center text-5xl font-Ovo">{t.contact.subtitle}</h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        Responderé con gusto a tus comentarios, sugerencias o dudas. No dudes en
-        contactarme. Estaré pendiente de cada uno de los mensajes para que
-        podamos estar en contacto directo.
+        {t.contact.description}
       </p>
+
       <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
         <div className="grid grid-cols-1 gap-6 mt-10 mb-8">
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="
+              flex-1 p-3 
+              outline-none 
+              border border-gray-400 
+              dark:border-gray-700 
+              rounded-md 
+              bg-white 
+              dark:bg-gray-800 
+              text-gray-800
+              dark:text-gray-200
+              placeholder-gray-500 
+              dark:placeholder-gray-400
+            "
             type="text"
-            placeholder="Ingresa tu nombre"
+            placeholder={t.contact.namePlaceholder}
             required
             onInvalid={(e) =>
-              e.target.setCustomValidity("Por favor, ingresa tu nombre.")
+              e.target.setCustomValidity(t.contact.errors.nameInvalid)
             }
             onInput={(e) => e.target.setCustomValidity("")}
           />
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="
+              flex-1 p-3 
+              outline-none 
+              border border-gray-400 
+              dark:border-gray-700 
+              rounded-md 
+              bg-white 
+              dark:bg-gray-800 
+              text-gray-800
+              dark:text-gray-200
+              placeholder-gray-500 
+              dark:placeholder-gray-400
+            "
             type="email"
-            placeholder="Ingresa tu email"
+            placeholder={t.contact.emailPlaceholder}
             required
             onInvalid={(e) =>
-              e.target.setCustomValidity("Por favor, ingresa un email válido.")
+              e.target.setCustomValidity(t.contact.errors.emailInvalid)
             }
             onInput={(e) => e.target.setCustomValidity("")}
           />
         </div>
         <textarea
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+          className="
+            w-full p-4 
+            outline-none 
+            border border-gray-400 
+            dark:border-gray-700 
+            rounded-md 
+            bg-white 
+            dark:bg-gray-800 
+            text-gray-800
+            dark:text-gray-200
+            placeholder-gray-500 
+            dark:placeholder-gray-400
+          "
           rows={6}
-          placeholder="Ingresa tu mensaje"
+          placeholder={t.contact.messagePlaceholder}
           required
           onInvalid={(e) =>
-            e.target.setCustomValidity("Por favor, escribe tu mensaje.")
+            e.target.setCustomValidity(t.contact.errors.messageInvalid)
           }
           onInput={(e) => e.target.setCustomValidity("")}
         ></textarea>
+
         {errorMessage && (
           <div className="mt-4 text-red-500 text-center">{errorMessage}</div>
         )}
+
         <div className="relative mt-6 flex justify-center">
           <button
-            className={`w-20 h-12 rounded-full bg-black text-white flex items-center justify-center transition-all duration-300 ${
-              isSubmitting
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-gray-800"
-            }`}
+            className={`
+              w-20 h-12 
+              rounded-full 
+              bg-black 
+              dark:bg-gray-800
+              text-white 
+              flex items-center justify-center 
+              transition-all 
+              duration-300 
+              ${
+                isSubmitting
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-gray-800 dark:hover:bg-gray-700"
+              }
+            `}
             type="submit"
             disabled={isSubmitting}
           >
@@ -126,10 +172,16 @@ function Contact() {
               <Send className="w-5 h-5" />
             )}
           </button>
+
           <div
-            className={`absolute top-0 right-0 flex items-center justify-center w-20 h-12 transition-opacity duration-300 ${
-              submitResult ? "opacity-100" : "opacity-0"
-            }`}
+            className={`
+              absolute top-0 right-0 
+              flex items-center justify-center 
+              w-20 h-12 
+              transition-opacity 
+              duration-300 
+              ${submitResult ? "opacity-100" : "opacity-0"}
+            `}
           >
             {submitResult === "success" && (
               <div className="bg-green-500 rounded-full p-1">
@@ -149,7 +201,19 @@ function Contact() {
         {networkData.map(({ icon, link }, index) => (
           <li
             key={index}
-            className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:shadow-black hover:-translate-y-1 transition-transform duration-500"
+            className="
+              flex items-center justify-center 
+              w-12 sm:w-14 
+              aspect-square 
+              border border-gray-400 
+              dark:border-gray-700
+              rounded-lg 
+              cursor-pointer 
+              hover:shadow-black 
+              hover:-translate-y-1 
+              transition-transform 
+              duration-500
+            "
           >
             <Link href={link} target="_blank">
               <Image src={icon} alt="" className="w-5 sm:w-7" />
