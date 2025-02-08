@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
       isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-gray-800 dark:bg-opacity-50" : ""
     }`}>
-      <motion.a href="#top" className="text-3xl font-bold relative font-Ovo">Luis Vera</motion.a>
+      <motion.a href="#top" className="text-3xl font-bold relative font-Outfit">Luis Vera</motion.a>
       <ul className="hidden md:flex items-center gap-6 lg:gap-8">
         <li><a className="font-Ovo" href="#top">{language === "es" ? "Inicio" : "Home"}</a></li>
         <li><a className="font-Ovo" href="#about">{language === "es" ? "Sobre mí" : "About"}</a></li>
@@ -64,7 +64,7 @@ const Navbar = () => {
           <Menu className="w-6 h-6" />
         </button>
       </div>
-      <ul ref={sideMenuRef} className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-0 top-0 bottom-0 z-50 w-64 h-screen bg-rose-50 dark:bg-gray-800 transition duration-500">
+      <ul ref={sideMenuRef} className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-0 top-0 bottom-0 z-50 w-64 h-screen bg-rose-50 dark:bg-gray-800 transition duration-200">
         <button className="absolute right-6 top-6" onClick={closeSideMenu}><X className="w-6 h-6" /></button>
         <li><a onClick={closeSideMenu} href="#top">{language === "es" ? "Inicio" : "Home"}</a></li>
         <li><a onClick={closeSideMenu} href="#about">{language === "es" ? "Sobre mí" : "About"}</a></li>

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { assets, infoList, toolsData } from "../../assets/assets";
+import { assets, toolsData } from "../../assets/assets";
 import { useAppContext } from "@/components/context/AppContext";
 import { translations } from "../utils/translations";
 
@@ -35,20 +35,24 @@ function About() {
                 ({ icon: Icon, title, description }, index) => (
                   <li
                     key={index}
-                    className="border-[0.5px] border-gray-400 rounded-xl p-6 
-                       cursor-pointer hover:bg-lightHover hover:-translate-y-1 
-                       transition-transform duration-500 hover:shadow-black"
+                    className="group border-[0.5px] border-gray-400 rounded-xl p-6 
+                 cursor-pointer hover:bg-lightHover hover:-translate-y-1 
+                 transition-transform duration-500 hover:shadow-black"
                   >
-                    <Icon className="w-8 h-8 text-gray-700" />
-                    <h3 className="my-4 font-semibold text-gray-700">
+                    <Icon className="w-8 h-8 dark:text-white text-gray-700 group-hover:dark:text-gray-700" />
+                    <h3 className="my-4 font-semibold dark:text-white text-gray-700 group-hover:dark:text-gray-700">
                       {title}
                     </h3>
-                    <p className="text-gray-600 text-sm">{description}</p>
+                    <p className="text-gray-600 dark:text-white text-sm group-hover:dark:text-gray-700">
+                      {description}
+                    </p>
                   </li>
                 )
               )}
             </ul>
-            <h4 className="my-6 text-gray-700 font-Ovo">{t.about.tools}</h4>
+            <h4 className="my-6 text-gray-700 dark:text-white font-Ovo">
+              {t.about.tools}
+            </h4>
             <ul className="flex items-center gap-3 sm:gap-5 flex-wrap justify-center sm:justify-start">
               {toolsData.map((tool, index) => (
                 <li

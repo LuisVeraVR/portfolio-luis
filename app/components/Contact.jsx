@@ -10,6 +10,7 @@ import { useAppContext } from "@/components/context/AppContext";
 
 function Contact() {
   const { language } = useAppContext();
+  const { theme } = useAppContext();
   const t = translations[language];
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState(null);
@@ -198,7 +199,9 @@ function Contact() {
       </form>
 
       <ul className="flex items-center gap-3 sm:gap-5 flex-wrap justify-center mt-10">
-        {networkData.map(({ icon, link }, index) => (
+      {networkData.map(({ icon, iconDark, link }, index) => {
+        const iconSrc = theme === "dark" && iconDark ? iconDark : icon;
+        return (
           <li
             key={index}
             className="
@@ -216,11 +219,12 @@ function Contact() {
             "
           >
             <Link href={link} target="_blank">
-              <Image src={icon} alt="" className="w-5 sm:w-7" />
+              <Image src={iconSrc} alt="" className="w-5 sm:w-7" />
             </Link>
           </li>
-        ))}
-      </ul>
+        );
+      })}
+    </ul>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import {
   Brush,
   Building2,
   Calendar
-} from "lucide-react"
+} from "lucide-react";
 
 import dogAppImage from "../../assets/image_perritos.jpg";
 import taskOrganizerImage from "../../assets/organizador_example.png";
@@ -28,7 +28,8 @@ export const translations = {
       introduction: "Introducción",
       description: "Como desarrollador Fullstack originario de Cali, combino mi entusiasmo por la innovación tecnológica con un toque creativo. Mi trabajo se ha centrado en iniciativas que trascienden límites y brindan propuestas digitales de última generación. Considero que cada fragmento de código es un portal para redefinir cómo los usuarios interactúan en línea y, sobre todo, para transformar conceptos en vivencias únicas.",
       tools: "Herramientas que uso:",
-      infoList: [{
+      infoList: [
+        {
           icon: Code2,
           iconDark: Code2,
           title: "Tecnologías",
@@ -51,8 +52,9 @@ export const translations = {
     services: {
       title: "Mis habilidades",
       subtitle: "¿En qué te puedo ayudar?",
-      description: "Soy un desarrollador Frontend con 2 (dos) años de experiencia en el desarrollo de aplicaciones web y móviles. Experiencia en creacion de software de calidad, escalable y mantenible.",
-      serviceData: [{
+      description: "Soy un desarrollador Frontend con 2 (dos) años de experiencia en el desarrollo de aplicaciones web y móviles. Experiencia en creación de software de calidad, escalable y mantenible.",
+      serviceData: [
+        {
           icon: Globe2,
           title: "Diseño Web",
           description: "El desarrollo web implica construir, programar y optimizar sitios web...",
@@ -82,7 +84,8 @@ export const translations = {
       title: "Mi Trabajo",
       subtitle: "¿Te gustaría ver mi trabajo?",
       description: "Explora algunos de los proyectos que he creado, combinando mis habilidades y pasión para dar vida a experiencias digitales únicas.",
-      workData: [{
+      workData: [
+        {
           title: "App de Perritos",
           description: "Aplicación móvil para amantes de los perros con React Native, Express.js, Clerk y MongoDB.",
           image: dogAppImage,
@@ -124,6 +127,36 @@ export const translations = {
         messageInvalid: "Por favor, escribe tu mensaje.",
       },
     },
+    resume: {
+      experience: {
+        title: "Experiencia",
+        fullStackTitle: "FullStack Developer",
+        fullStackPeriod: "Agosto 2023 - Presente",
+        fullStackDescription: "Desarrollo de BackOffice personalizada con Angular, Typescript, Primeng, Laravel Eloquent, MySQL.",
+        technicianTitle: "Técnico de sistemas",
+        technicianPeriod: "Enero 2022 - Agosto 2023",
+        technicianDescription: "Soporte técnico a usuarios, mantenimiento de hardware y software, administración de servidores y redes."
+      },
+      education: {
+        title: "Educación",
+        university: "Universidad Católica Lumen Gentium",
+        period: "Tecnología en Desarrollo de Software, 2022 - Presente",
+        description: "Estudios enfocados en programación, algoritmos, estructuras de datos y desarrollo de software en general."
+      },
+      projects: {
+        title: "Proyectos",
+        project1: {
+          title: "BackOffice - Sneakerverse",
+          description: "Plataforma de comercio electrónico para la venta de zapatillas, con integración de pasarelas de pago y gestión de inventario.",
+          button: "Ver proyecto"
+        },
+        project2: {
+          title: "App para Adopción de Perritos",
+          description: "Aplicación de adopción de mascotas, con integración de pasarelas de pago y gestión de inventario.",
+          button: "Ver proyecto"
+        }
+      },
+    },
   },
   en: {
     hero: {
@@ -138,7 +171,8 @@ export const translations = {
       introduction: "Introduction",
       description: "As a Fullstack developer from Cali, I combine my enthusiasm for technological innovation with a creative touch. My work has focused on initiatives that transcend boundaries and provide cutting-edge digital proposals. I believe that each piece of code is a portal to redefine how users interact online and, above all, to transform concepts into unique experiences.",
       tools: "Tools I use:",
-      infoList: [{
+      infoList: [
+        {
           icon: Code2,
           iconDark: Code2,
           title: "Technologies",
@@ -162,7 +196,8 @@ export const translations = {
       title: "My skills",
       subtitle: "How can I help you?",
       description: "I am a Frontend developer with 2 (two) years of experience in web and mobile application development. Experience in creating quality, scalable, and maintainable software.",
-      serviceData: [{
+      serviceData: [
+        {
           icon: Globe2,
           title: "Web Design",
           description: "Web development involves building, programming, and optimizing websites...",
@@ -192,7 +227,8 @@ export const translations = {
       title: "My Work",
       subtitle: "Would you like to see my work?",
       description: "Explore some of the projects I've created, combining my skills and passion to bring unique digital experiences to life.",
-      workData: [{
+      workData: [
+        {
           title: "Doggie App",
           description: "Mobile application for dog lovers built with React Native, Express.js, Clerk, and MongoDB.",
           image: dogAppImage,
@@ -234,5 +270,35 @@ export const translations = {
         messageInvalid: "Please write your message.",
       },
     },
+    resume: {
+      experience: {
+        title: "Experience",
+        fullStackTitle: "FullStack Developer",
+        fullStackPeriod: "August 2023 - Present",
+        fullStackDescription: "Custom BackOffice development using Angular, Typescript, Primeng, Laravel Eloquent, MySQL.",
+        technicianTitle: "Systems Technician",
+        technicianPeriod: "January 2022 - August 2023",
+        technicianDescription: "Technical support to users, hardware and software maintenance, server and network administration."
+      },
+      education: {
+        title: "Education",
+        university: "Catholic University Lumen Gentium",
+        period: "Software Development Technology, 2022 - Present",
+        description: "Studies focused on programming, algorithms, data structures, and overall software development."
+      },
+      projects: {
+        title: "Projects",
+        project1: {
+          title: "BackOffice - Sneakerverse",
+          description: "E-commerce platform for sneaker sales, with payment gateway integration and inventory management.",
+          button: "View project"
+        },
+        project2: {
+          title: "Dog Adoption App",
+          description: "Mobile application for pet adoption, with payment gateway integration and inventory management.",
+          button: "View project"
+        }
+      },
+    },
   },
-}
+};

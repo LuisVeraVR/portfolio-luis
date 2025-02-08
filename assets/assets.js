@@ -40,20 +40,13 @@ import larger_user_image from './larger_user_image.png';
 import image_perritos from './image_perritos.jpg';
 import web_notion_example from './organizador_example.png';
 import github from './github-mark.svg'
+import githubwhite from './github-white.svg' 
 import linkedin from './linkedin.svg'
+import linkedinwhite from './linkedin-white.svg'
 import instagram from './instagram.svg'
+import instagramwhite from './instagram-white.svg'
 import ukFlag from './uk-flag.png';
 import esFlag from './spain-flag.png';
-
-import {
-  Globe2, // Para Web design
-  Smartphone, // Para Mobile app
-  Paintbrush2, // Para UI/UX design
-  Brush, // Para Graphics design
-  Code2, // Para lenguajes de programación
-  GraduationCap, // Para educación
-  FolderArchive, // Para proyectos
-} from "lucide-react";
 
 export const assets = {
   code_icon,
@@ -98,8 +91,11 @@ export const assets = {
   image_perritos,
   web_notion_example,
   github,
+  githubwhite,
   linkedin,
+  linkedinwhite,
   instagram,
+  instagramwhite,
   ukFlag,
   esFlag
 };
@@ -109,16 +105,20 @@ export const toolsData = [
   assets.vscode, assets.azure, assets.mongodb, assets.figma, assets.git
 ];
 
-export const networkData = [{
+export const networkData = [
+  {
     icon: assets.github,
+    iconDark: assets.githubwhite, 
     link: "https://github.com/LuisVeraVR"
   },
   {
     icon: assets.linkedin,
+    iconDark: assets.linkedinwhite,
     link: "https://linkedin.com"
   },
   {
     icon: assets.instagram,
+    iconDark: assets.instagramwhite,
     link: "https://www.instagram.com/luis_v.03/"
   }
-]
+];

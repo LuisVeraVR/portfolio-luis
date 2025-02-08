@@ -23,15 +23,18 @@ function Services() {
           {t.services.serviceData.map(
             ({ icon: Icon, title, description, link }, index) => (
               <div
-                className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500"
                 key={index}
+                className="group border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 transition-transform duration-500"
               >
                 <div className="flex justify-center items-center bg-black p-3 w-[50px] rounded-xl">
-                  <Icon className="w-10 text-white" />
+                  <Icon className="w-10 text-white group-hover:dark:text-white" />
                 </div>
-                <h3 className="text-lg my-4 text-gray-700">{title}</h3>
-                <p className="text-sm text-gray-600 leading-5">{description}</p>
-               
+                <h3 className="text-lg my-4 text-gray-700 dark:text-white group-hover:dark:text-gray-700">
+                  {title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-white leading-5 group-hover:dark:text-gray-700">
+                  {description}
+                </p>
               </div>
             )
           )}
