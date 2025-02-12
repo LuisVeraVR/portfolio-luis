@@ -47,6 +47,7 @@ import instagram from './instagram.svg'
 import instagramwhite from './instagram-white.svg'
 import ukFlag from './uk-flag.png';
 import esFlag from './spain-flag.png';
+import userIcon from './usuario.svg'
 
 export const assets = {
   code_icon,
@@ -97,7 +98,8 @@ export const assets = {
   instagram,
   instagramwhite,
   ukFlag,
-  esFlag
+  esFlag,
+  userIcon
 };
 
 

@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 
 import { assets } from "@/assets/assets";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { SkillProgress } from "@/components/ui/skill-progress";
 import { Button } from "@/components/ui/button";
 import {
@@ -60,8 +59,7 @@ export default function Resume() {
           className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4 sm:p-8"
         >
           <Card className="w-full max-w-6xl bg-white dark:bg-gray-800 shadow-xl overflow-hidden relative">
-            <div className="flex absolute right-4 gap-2 p-4">
-              <ThemeToggle />
+            <div className="flex absolute right-0 mt-5">
               <Button
                 variant="ghost"
                 size="icon"

@@ -10,13 +10,6 @@ export const AppProvider = ({ children }) => {
   const [transitioning, setTransitioning] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      setTheme(prefersDark ? "dark" : "light");
-    }
-
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage) setLanguage(savedLanguage);
   }, []);

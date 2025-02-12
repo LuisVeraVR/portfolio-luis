@@ -1,10 +1,11 @@
-"use client";
-
-import { Outfit, Ovo } from "next/font/google";
+// app/layout.js
 import "./globals.css";
+import { Outfit, Ovo } from "next/font/google";
+import { AppProvider } from "@/components/context/AppContext";
+import HtmlBodyWrapper from "@/components/hook/HtmlBodyWrapper"; // el wrapper cliente
+import { assets } from "@/assets/assets";
 
-import { AppProvider, useAppContext } from "../components/context/AppContext";
-
+// Fuentes
 const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -15,41 +16,32 @@ const ovo = Ovo({
   subsets: ["latin"],
 });
 
-function HtmlBodyWrapper({ children }) {
-  const { theme, transitioning } = useAppContext();
-
-  return (
-    <html lang="en" className={`scroll-smooth ${theme === "dark" ? "dark" : ""}`}>
-      <body
-  className={`
-    ${outfit.className}
-    ${ovo.className}
-    antialiased 
-    leading-8 
-    overflow-x-hidden
-    transition-[background-color] duration-200 ease-in-out
-    bg-white
-    dark:bg-gray-900
-  `}
->
-  <div
-    className={`
-      transition-opacity
-      duration-200
-      ${transitioning ? "opacity-0" : "opacity-100"}
-    `}
-  >
-    {children}
-  </div>
-</body>
-    </html>
-  );
-}
+export const metadata = {
+  title: "Portfolio - Luis Vera",
+  description: "Desarrollador web con Next.js y React",
+    icon: "/assets/usuario.svg"
+};
 
 export default function RootLayout({ children }) {
   return (
-    <AppProvider>
-      <HtmlBodyWrapper>{children}</HtmlBodyWrapper>
-    </AppProvider>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`
+          ${outfit.className}
+          ${ovo.className}
+          bg-white
+          dark:bg-gray-900
+          transition-colors
+          duration-200
+          antialiased
+          leading-8
+          overflow-x-hidden
+        `}
+      >
+        <AppProvider>
+          <HtmlBodyWrapper>{children}</HtmlBodyWrapper>
+        </AppProvider>
+      </body>
+    </html>
   );
 }

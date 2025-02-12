@@ -14,12 +14,12 @@ function About() {
       className="w-full px-[12%] py-10 scroll-mt-20 flex justify-center"
     >
       <div className="max-w-6xl w-full">
-        <h4 className="text-center mb-2 text-lg font-Ovo">
+        <h4 className="text-center mb-2 text-lg font-Ovo dark:text-white">
           {t.about.introduction}
         </h4>
-        <h2 className="text-center text-5xl font-Ovo">{t.about.title}</h2>
+        <h2 className="text-center text-5xl font-Ovo dark:text-white">{t.about.title}</h2>
 
-        <div className="flex w-full flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row items-center justify-center gap-10 lg:gap-10 xl:gap-20 my-20">
+        <div className="flex w-full flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row items-center justify-center gap-10 lg:gap-10 xl:gap-20 my-20 dark:text-white">
           <div className="w-64 sm:w-80 rounded-3xl max-w-none">
             <Image
               src={assets.larger_user_image}
