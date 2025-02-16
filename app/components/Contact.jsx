@@ -66,10 +66,10 @@ function Contact() {
 
   return (
     <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo dark:text-white">{t.contact.title}</h4>
-      <h2 className="text-center text-5xl font-Ovo dark:text-white">{t.contact.subtitle}</h2>
+      <h4 className="text-center mb-2 text-lg font-Ovo">{t.contact.title}</h4>
+      <h2 className="text-center text-5xl font-Ovo">{t.contact.subtitle}</h2>
 
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo dark:text-white">
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         {t.contact.description}
       </p>
 

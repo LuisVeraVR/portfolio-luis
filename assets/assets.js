@@ -116,7 +116,7 @@ export const networkData = [
   {
     icon: assets.linkedin,
     iconDark: assets.linkedinwhite,
-    link: "https://linkedin.com"
+    link: "https://www.linkedin.com/in/luisveravr"
   },
   {
     icon: assets.instagram,

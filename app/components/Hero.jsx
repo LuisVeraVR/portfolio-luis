@@ -40,13 +40,14 @@ function Hero() {
           {t.cta1}
           <ArrowRight className="w-4" />
         </a>
-        <Link
-          href="/resume"
+        <a
+          href="/curriculum.pdf"
+          download="curriculum.pdf"
           className="px-10 py-3 border border-black rounded-full bg-white text-black flex items-center gap-2 dark:bg-gray-800 dark:text-white dark:border-white"
         >
           <Download className="w-4" />
           {t.cta2}
-        </Link>
+        </a>
       </div>
     </div>
   );

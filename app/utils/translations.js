@@ -10,9 +10,9 @@ import {
   Calendar
 } from "lucide-react";
 
-import dogAppImage from "../../assets/image_perritos.jpg";
-import taskOrganizerImage from "../../assets/organizador_example.png";
-import backOfficeImage from "../../assets/back-office.jpg";
+import dogAppImage from "../../assets/public/work-1.png";
+import taskOrganizerImage from "../../assets/public/work-2.png";
+import backOfficeImage from "../../assets/public/work-4.png";
 
 export const translations = {
   es: {
