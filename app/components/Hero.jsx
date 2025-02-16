@@ -41,8 +41,8 @@ function Hero() {
           <ArrowRight className="w-4" />
         </a>
         <a
-          href="/curriculum.pdf"
-          download="curriculum.pdf"
+          href="/curriculum-web.pdf"
+          download="curriculum-web.pdf"
           className="px-10 py-3 border border-black rounded-full bg-white text-black flex items-center gap-2 dark:bg-gray-800 dark:text-white dark:border-white"
         >
           <Download className="w-4" />
