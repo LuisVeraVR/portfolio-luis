@@ -1,19 +1,23 @@
+// app/components/Hero.jsx (o .js)
+"use client";
+
 import Image from "next/image";
-import { assets } from "../../assets/assets";
-import { ArrowRight, Download } from "lucide-react";
 import { useAppContext } from "../../components/context/AppContext";
 import { translations } from "../utils/translations";
-import Link from "next/link";
+import { assets } from "../../assets/assets"; 
 
 function Hero() {
   const { language } = useAppContext();
-  const t = translations[language].hero;
+  const t =
+    translations[language]?.hero ??
+     translations["es"].hero;
+  
 
   return (
     <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div>
         <Image
-          src={assets.user_image || "/placeholder.svg"}
+          src={assets.user_image || "/assets/.svg"}
           alt=""
           className="rounded-full w-32"
         />
@@ -38,14 +42,12 @@ function Hero() {
           className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-white dark:text-black"
         >
           {t.cta1}
-          <ArrowRight className="w-4" />
         </a>
         <a
           href="/curriculum-web.pdf"
           download="curriculum-web.pdf"
           className="px-10 py-3 border border-black rounded-full bg-white text-black flex items-center gap-2 dark:bg-gray-800 dark:text-white dark:border-white"
         >
-          <Download className="w-4" />
           {t.cta2}
         </a>
       </div>

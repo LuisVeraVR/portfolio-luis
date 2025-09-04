@@ -6,17 +6,19 @@ import { translations } from "../utils/translations";
 
 function Work() {
   const { language } = useAppContext();
-  const t = translations[language];
+  const t =
+    translations[language]?.work ??
+     translations["es"].work;
 
   return (
     <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo dark:text-white">{t.work.subtitle}</h4>
-      <h2 className="text-center text-5xl font-Ovo mb-5 dark:text-white">{t.work.title}</h2>
+      <h4 className="text-center mb-2 text-lg font-Ovo dark:text-white">{t.subtitle}</h4>
+      <h2 className="text-center text-5xl font-Ovo mb-5 dark:text-white">{t.title}</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo dark:text-white">
-        {t.work.description}
+        {t.description}
       </p>
       <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 my-10">
-  {t.work.workData.map(
+  {t.workData.map(
     (
       { title, description, image, link, technologies, icon: Icon },
       index

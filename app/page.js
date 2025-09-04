@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import SubtleBackground from "./components/AnimatedBackground";
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+import ModernNavbar from "./components/Navbar";
 import About from "./components/About";
 import Services from "./components/Services";
 import Work from "./components/Work";
@@ -26,7 +26,7 @@ export default function Home() {
       transition={{ duration: 1 }}
     >
       <SubtleBackground />
-      <Navbar />
+      <ModernNavbar /> 
       <Hero />
       <About />
       <Services />

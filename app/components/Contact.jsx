@@ -11,7 +11,9 @@ import { useAppContext } from "@/components/context/AppContext";
 function Contact() {
   const { language } = useAppContext();
   const { theme } = useAppContext();
-  const t = translations[language];
+  const t =
+    translations[language]?.contact ??
+     translations["es"].contact;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -66,11 +68,11 @@ function Contact() {
 
   return (
     <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo">{t.contact.title}</h4>
-      <h2 className="text-center text-5xl font-Ovo">{t.contact.subtitle}</h2>
+      <h4 className="text-center mb-2 text-lg font-Ovo">{t.title}</h4>
+      <h2 className="text-center text-5xl font-Ovo">{t.subtitle}</h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        {t.contact.description}
+        {t.description}
       </p>
 
       <form className="max-w-2xl mx-auto" onSubmit={handleSubmit} noValidate>
@@ -90,10 +92,10 @@ function Contact() {
               dark:placeholder-gray-400
             "
             type="text"
-            placeholder={t.contact.namePlaceholder}
+            placeholder={t.namePlaceholder}
             required
             onInvalid={(e) =>
-              e.target.setCustomValidity(t.contact.errors.nameInvalid)
+              e.target.setCustomValidity(t.errors.nameInvalid)
             }
             onInput={(e) => e.target.setCustomValidity("")}
           />
@@ -112,10 +114,10 @@ function Contact() {
               dark:placeholder-gray-400
             "
             type="email"
-            placeholder={t.contact.emailPlaceholder}
+            placeholder={t.emailPlaceholder}
             required
             onInvalid={(e) =>
-              e.target.setCustomValidity(t.contact.errors.emailInvalid)
+              e.target.setCustomValidity(t.errors.emailInvalid)
             }
             onInput={(e) => e.target.setCustomValidity("")}
           />
@@ -135,10 +137,10 @@ function Contact() {
             dark:placeholder-gray-400
           "
           rows={6}
-          placeholder={t.contact.messagePlaceholder}
+          placeholder={t.messagePlaceholder}
           required
           onInvalid={(e) =>
-            e.target.setCustomValidity(t.contact.errors.messageInvalid)
+            e.target.setCustomValidity(t.errors.messageInvalid)
           }
           onInput={(e) => e.target.setCustomValidity("")}
         ></textarea>

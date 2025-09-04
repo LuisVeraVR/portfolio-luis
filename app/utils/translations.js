@@ -7,7 +7,10 @@ import {
   Paintbrush2,
   Brush,
   Building2,
-  Calendar
+  Calendar,
+  Briefcase,
+  Award,
+  Users
 } from "lucide-react";
 
 import dogAppImage from "../../assets/public/work-1.png";
@@ -18,64 +21,160 @@ export const translations = {
   es: {
     hero: {
       greeting: "¡Hola! Soy Luis Vera",
-      title: "desarrollador frontend orgullosamente caleño.",
+      title: "Desarrollador Fullstack",
       description: "Apasionado por la tecnología y el diseño, disfruto crear soluciones digitales que transformen ideas en experiencias innovadoras. Siempre estoy en búsqueda de nuevos desafíos y aprendizajes para seguir creciendo como profesional.",
       cta1: "¡Conversemos!",
       cta2: "Mi trabajo",
     },
     about: {
-      title: "Sobre mí",
       introduction: "Introducción",
-      description: "Como desarrollador Fullstack originario de Cali, combino mi entusiasmo por la innovación tecnológica con un toque creativo. Mi trabajo se ha centrado en iniciativas que trascienden límites y brindan propuestas digitales de última generación. Considero que cada fragmento de código es un portal para redefinir cómo los usuarios interactúan en línea y, sobre todo, para transformar conceptos en vivencias únicas.",
+      title: "Sobre mí",
+      description: "Full Stack Developer con experiencia en Angular, Next.js, Node.js, Laravel y Django. Experto en APIs, bases de datos SQL/NoSQL y despliegues en la nube con Docker y AWS. Me apasiona crear soluciones tecnológicas innovadoras y eficientes que generen un impacto real en los usuarios y las empresas.",
       tools: "Herramientas que uso:",
+      
+      // Stats section
+      stats: [
+        { label: "Años de Experiencia", value: "2+" },
+        { label: "Proyectos Completados", value: "50+" },
+        { label: "Disponibilidad del Sistema", value: "99.9%" },
+        { label: "Satisfacción del Cliente", value: "90%+" }
+      ],
+
+      // Info cards con información actualizada del CV
       infoList: [
         {
-          icon: Code2,
-          iconDark: Code2,
-          title: "Tecnologías",
-          description: "Angular, React, JavaScript, TypeScript, Next.js, HTML, CSS"
+          icon: Briefcase,
+          title: "Experiencia",
+          description: "2+ años como Fullstack Developer en Kalez S.A y soporte técnico",
         },
         {
           icon: GraduationCap,
-          iconDark: GraduationCap,
           title: "Educación",
-          description: "Graduado en Tecnología en Desarrollo de Software..."
+          description: "Tecnología en Desarrollo de Software (En curso) y Técnico en Sistemas",
         },
         {
-          icon: FolderArchive,
-          iconDark: FolderArchive,
-          title: "Proyectos",
-          description: "He trabajado en 2 proyectos"
-        }
-      ]
+          icon: Award,
+          title: "Logros",
+          description: "Optimización de BD 30%, Microservicios -25% carga servidor, 200+ tickets resueltos",
+        },
+      ],
+
+      // Experience section
+      experience: {
+        title: "Experiencia Profesional",
+        jobs: [
+          {
+            title: "Desarrollador FullStack",
+            company: "Kalez S.A",
+            period: "Agosto 2023 - Presente",
+            location: "Cali, Colombia",
+            achievements: [
+              "Desarrollo de aplicaciones web con JavaScript, TypeScript, Angular, Laravel y Django en arquitectura de microservicios en AWS",
+              "Diseño y optimización de bases de datos MySQL, mejorando el rendimiento en un 30%",
+              "Implementación de microservicios que redujeron la carga del servidor en un 25%",
+              "Migración de módulos críticos a la nube, alcanzando una disponibilidad del 99.9%"
+            ]
+          },
+          {
+            title: "Soporte y Mantenimiento de Software",
+            company: "Instituto Técnico Colombiano",
+            period: "Agosto 2022 - Agosto 2023",
+            location: "Cali, Colombia",
+            achievements: [
+              "Administración y personalización de la plataforma Moodle, mejorando la experiencia de usuario en un 20%",
+              "Automatización de procesos con scripting, reduciendo en un 40% los tiempos de tareas repetitivas",
+              "Mantenimiento de servidores físicos, disminuyendo fallas en un 50%",
+              "Resolución de más de 200 incidencias técnicas con índice de satisfacción superior al 90%"
+            ]
+          }
+        ]
+      },
+
+      // Education section
+      education: {
+        title: "Educación",
+        degrees: [
+          {
+            degree: "Tecnología en Desarrollo de Software",
+            institution: "Fundación Universitaria Católica Lumen Gentium",
+            period: "2023 - Actualmente",
+            location: "Cali",
+            status: "En curso"
+          },
+          {
+            degree: "Técnico en Mantenimiento de Sistemas",
+            institution: "Instituto Técnico Colombiano",
+            period: "2021 - 2022",
+            location: "Cali",
+            status: "Completado"
+          }
+        ]
+      },
+
+      // Skills section
+      skills: {
+        title: "Habilidades",
+        technical: "Stack Tecnológico",
+        technicalList: [
+          "JavaScript", "TypeScript", "Angular", "Next.js", "React",
+          "Tailwind CSS", "PrimeNG", "GSAP", "Framer Motion",
+          "Node.js", "Express", "Laravel", "Django",
+          "MySQL", "MongoDB", "APIs REST",
+          "Git", "GitHub", "Docker", "Railway", "AWS S3",
+          "Pruebas Unitarias", "Pruebas de Integración",
+          "Scrum", "Kanban", "UX/UI", "Figma"
+        ],
+        soft: "Habilidades Blandas",
+        softList: [
+          "Comunicación Efectiva",
+          "Trabajo en Equipo",
+          "Resolución de Problemas",
+          "Adaptabilidad",
+          "Gestión del Tiempo",
+          "Pensamiento Crítico",
+          "Liderazgo",
+          "Empatía",
+          "Creatividad",
+          "Proactividad"
+        ]
+      },
+
+      // Languages
+      languages: {
+        title: "Idiomas",
+        list: [
+          { name: "Español", level: "Nativo" },
+          { name: "Inglés", level: "B1 - Intermedio" }
+        ]
+      }
     },
     services: {
       title: "Mis habilidades",
       subtitle: "¿En qué te puedo ayudar?",
-      description: "Soy un desarrollador Frontend con 2 (dos) años de experiencia en el desarrollo de aplicaciones web y móviles. Experiencia en creación de software de calidad, escalable y mantenible.",
+      description: "Soy un desarrollador Fullstack con 2+ años de experiencia en el desarrollo de aplicaciones web y móviles. Experiencia en creación de software de calidad, escalable y mantenible.",
       serviceData: [
         {
           icon: Globe2,
-          title: "Diseño Web",
-          description: "El desarrollo web implica construir, programar y optimizar sitios web...",
+          title: "Desarrollo Web",
+          description: "Desarrollo de aplicaciones web robustas con Angular, React, Next.js y frameworks backend modernos",
           link: "",
         },
         {
           icon: Smartphone,
           title: "Aplicaciones Móviles",
-          description: "El desarrollo de aplicaciones móviles consiste en crear software para dispositivos móviles...",
+          description: "Creación de apps móviles nativas y multiplataforma con React Native y tecnologías modernas",
           link: "",
         },
         {
           icon: Paintbrush2,
           title: "Diseño UI/UX",
-          description: "El diseño UI/UX se enfoca en crear experiencias de usuario intuitivas y atractivas...",
+          description: "Diseño de interfaces intuitivas y experiencias de usuario excepcionales con Figma y herramientas modernas",
           link: "",
         },
         {
-          icon: Brush,
-          title: "Diseño Gráfico",
-          description: "Soluciones creativas de diseño para mejorar la comunicación visual...",
+          icon: Building2,
+          title: "Soluciones Empresariales",
+          description: "Desarrollo de sistemas BackOffice, microservicios y arquitecturas cloud con AWS",
           link: "",
         },
       ]
@@ -130,29 +229,32 @@ export const translations = {
     resume: {
       experience: {
         title: "Experiencia",
-        fullStackTitle: "FullStack Developer",
+        fullStackTitle: "FullStack Developer - Kalez S.A",
         fullStackPeriod: "Agosto 2023 - Presente",
-        fullStackDescription: "Desarrollo de BackOffice personalizada con Angular, Typescript, Primeng, Laravel Eloquent, MySQL.",
-        technicianTitle: "Técnico de sistemas",
-        technicianPeriod: "Enero 2022 - Agosto 2023",
-        technicianDescription: "Soporte técnico a usuarios, mantenimiento de hardware y software, administración de servidores y redes."
+        fullStackDescription: "Desarrollo de aplicaciones con Angular, TypeScript, Laravel, Django. Optimización de BD MySQL 30%, implementación de microservicios, disponibilidad 99.9%.",
+        technicianTitle: "Soporte y Mantenimiento - Instituto Técnico Colombiano",
+        technicianPeriod: "Agosto 2022 - Agosto 2023",
+        technicianDescription: "Administración Moodle, automatización de procesos (40% reducción), mantenimiento de servidores, 200+ tickets resueltos con 90%+ satisfacción."
       },
       education: {
         title: "Educación",
-        university: "Universidad Católica Lumen Gentium",
-        period: "Tecnología en Desarrollo de Software, 2022 - Presente",
-        description: "Estudios enfocados en programación, algoritmos, estructuras de datos y desarrollo de software en general."
+        university: "Fundación Universitaria Católica Lumen Gentium",
+        period: "Tecnología en Desarrollo de Software, 2023 - Presente",
+        description: "Estudios enfocados en programación, algoritmos, estructuras de datos y desarrollo de software en general.",
+        technical: "Instituto Técnico Colombiano",
+        technicalPeriod: "Técnico en Mantenimiento de Sistemas, 2021 - 2022",
+        technicalDescription: "Formación técnica en sistemas, redes, mantenimiento de hardware y software."
       },
       projects: {
         title: "Proyectos",
         project1: {
-          title: "BackOffice - Sneakerverse",
-          description: "Plataforma de comercio electrónico para la venta de zapatillas, con integración de pasarelas de pago y gestión de inventario.",
+          title: "BackOffice - Kalez S.A",
+          description: "Sistema de gestión empresarial con Angular 17, Laravel, MySQL. Arquitectura de microservicios en AWS con 99.9% disponibilidad.",
           button: "Ver proyecto"
         },
         project2: {
           title: "App para Adopción de Perritos",
-          description: "Aplicación de adopción de mascotas, con integración de pasarelas de pago y gestión de inventario.",
+          description: "Aplicación móvil con React Native, Express.js, MongoDB. Sistema de autenticación con Clerk y diseño responsive.",
           button: "Ver proyecto"
         }
       },
@@ -161,64 +263,160 @@ export const translations = {
   en: {
     hero: {
       greeting: "Hello! I'm Luis Vera",
-      title: "a proud Cali-born frontend developer.",
+      title: "Fullstack Developer",
       description: "Passionate about technology and design, I enjoy creating digital solutions that transform ideas into innovative experiences. I'm always looking for new challenges and learning opportunities to continue growing as a professional.",
       cta1: "Let's talk!",
       cta2: "My work",
     },
     about: {
-      title: "About me",
       introduction: "Introduction",
-      description: "As a Fullstack developer from Cali, I combine my enthusiasm for technological innovation with a creative touch. My work has focused on initiatives that transcend boundaries and provide cutting-edge digital proposals. I believe that each piece of code is a portal to redefine how users interact online and, above all, to transform concepts into unique experiences.",
+      title: "About me",
+      description: "Full Stack Developer with experience in Angular, Next.js, Node.js, Laravel and Django. Expert in APIs, SQL/NoSQL databases and cloud deployments with Docker and AWS. I'm passionate about creating innovative and efficient technological solutions that generate real impact for users and companies.",
       tools: "Tools I use:",
+      
+      // Stats section
+      stats: [
+        { label: "Years of Experience", value: "2+" },
+        { label: "Completed Projects", value: "50+" },
+        { label: "System Availability", value: "99.9%" },
+        { label: "Client Satisfaction", value: "90%+" }
+      ],
+
+      // Info cards with updated CV info
       infoList: [
         {
-          icon: Code2,
-          iconDark: Code2,
-          title: "Technologies",
-          description: "Angular, React, JavaScript, TypeScript, Next.js, HTML, CSS"
+          icon: Briefcase,
+          title: "Experience",
+          description: "2+ years as Fullstack Developer at Kalez S.A and technical support",
         },
         {
           icon: GraduationCap,
-          iconDark: GraduationCap,
           title: "Education",
-          description: "Graduated in Software Development Technology..."
+          description: "Software Development Technology (In progress) and Systems Technician",
         },
         {
-          icon: FolderArchive,
-          iconDark: FolderArchive,
-          title: "Projects",
-          description: "I have worked on 2 projects"
-        }
-      ]
+          icon: Award,
+          title: "Achievements",
+          description: "30% DB optimization, Microservices -25% server load, 200+ resolved tickets",
+        },
+      ],
+
+      // Experience section
+      experience: {
+        title: "Professional Experience",
+        jobs: [
+          {
+            title: "FullStack Developer",
+            company: "Kalez S.A",
+            period: "August 2023 - Present",
+            location: "Cali, Colombia",
+            achievements: [
+              "Web application development with JavaScript, TypeScript, Angular, Laravel and Django in AWS microservices architecture",
+              "MySQL database design and optimization, improving performance by 30%",
+              "Microservices implementation that reduced server load by 25%",
+              "Critical modules migration to cloud, achieving 99.9% availability"
+            ]
+          },
+          {
+            title: "Software Support and Maintenance",
+            company: "Instituto Técnico Colombiano",
+            period: "August 2022 - August 2023",
+            location: "Cali, Colombia",
+            achievements: [
+              "Moodle platform administration and customization, improving user experience by 20%",
+              "Process automation with scripting, reducing repetitive task times by 40%",
+              "Physical server maintenance, decreasing failures by 50%",
+              "Resolution of over 200 technical incidents with satisfaction rate above 90%"
+            ]
+          }
+        ]
+      },
+
+      // Education section
+      education: {
+        title: "Education",
+        degrees: [
+          {
+            degree: "Software Development Technology",
+            institution: "Fundación Universitaria Católica Lumen Gentium",
+            period: "2023 - Currently",
+            location: "Cali",
+            status: "In progress"
+          },
+          {
+            degree: "Systems Maintenance Technician",
+            institution: "Instituto Técnico Colombiano",
+            period: "2021 - 2022",
+            location: "Cali",
+            status: "Completed"
+          }
+        ]
+      },
+
+      // Skills section
+      skills: {
+        title: "Skills",
+        technical: "Technology Stack",
+        technicalList: [
+          "JavaScript", "TypeScript", "Angular", "Next.js", "React",
+          "Tailwind CSS", "PrimeNG", "GSAP", "Framer Motion",
+          "Node.js", "Express", "Laravel", "Django",
+          "MySQL", "MongoDB", "REST APIs",
+          "Git", "GitHub", "Docker", "Railway", "AWS S3",
+          "Unit Testing", "Integration Testing",
+          "Scrum", "Kanban", "UX/UI", "Figma"
+        ],
+        soft: "Soft Skills",
+        softList: [
+          "Effective Communication",
+          "Teamwork",
+          "Problem Solving",
+          "Adaptability",
+          "Time Management",
+          "Critical Thinking",
+          "Leadership",
+          "Empathy",
+          "Creativity",
+          "Proactivity"
+        ]
+      },
+
+      // Languages
+      languages: {
+        title: "Languages",
+        list: [
+          { name: "Spanish", level: "Native" },
+          { name: "English", level: "B1 - Intermediate" }
+        ]
+      }
     },
     services: {
       title: "My skills",
       subtitle: "How can I help you?",
-      description: "I am a Frontend developer with 2 (two) years of experience in web and mobile application development. Experience in creating quality, scalable, and maintainable software.",
+      description: "I am a Fullstack developer with 2+ years of experience in web and mobile application development. Experience in creating quality, scalable, and maintainable software.",
       serviceData: [
         {
           icon: Globe2,
-          title: "Web Design",
-          description: "Web development involves building, programming, and optimizing websites...",
+          title: "Web Development",
+          description: "Development of robust web applications with Angular, React, Next.js and modern backend frameworks",
           link: "",
         },
         {
           icon: Smartphone,
           title: "Mobile Applications",
-          description: "Mobile app development consists of creating software for mobile devices...",
+          description: "Creation of native and cross-platform mobile apps with React Native and modern technologies",
           link: "",
         },
         {
           icon: Paintbrush2,
           title: "UI/UX Design",
-          description: "UI/UX design focuses on creating intuitive and attractive user experiences...",
+          description: "Design of intuitive interfaces and exceptional user experiences with Figma and modern tools",
           link: "",
         },
         {
-          icon: Brush,
-          title: "Graphic Design",
-          description: "Creative design solutions to enhance visual communication...",
+          icon: Building2,
+          title: "Enterprise Solutions",
+          description: "Development of BackOffice systems, microservices and cloud architectures with AWS",
           link: "",
         },
       ]
@@ -273,29 +471,32 @@ export const translations = {
     resume: {
       experience: {
         title: "Experience",
-        fullStackTitle: "FullStack Developer",
+        fullStackTitle: "FullStack Developer - Kalez S.A",
         fullStackPeriod: "August 2023 - Present",
-        fullStackDescription: "Custom BackOffice development using Angular, Typescript, Primeng, Laravel Eloquent, MySQL.",
-        technicianTitle: "Systems Technician",
-        technicianPeriod: "January 2022 - August 2023",
-        technicianDescription: "Technical support to users, hardware and software maintenance, server and network administration."
+        fullStackDescription: "Application development with Angular, TypeScript, Laravel, Django. MySQL DB optimization 30%, microservices implementation, 99.9% availability.",
+        technicianTitle: "Support and Maintenance - Instituto Técnico Colombiano",
+        technicianPeriod: "August 2022 - August 2023",
+        technicianDescription: "Moodle administration, process automation (40% reduction), server maintenance, 200+ tickets resolved with 90%+ satisfaction."
       },
       education: {
         title: "Education",
-        university: "Catholic University Lumen Gentium",
-        period: "Software Development Technology, 2022 - Present",
-        description: "Studies focused on programming, algorithms, data structures, and overall software development."
+        university: "Fundación Universitaria Católica Lumen Gentium",
+        period: "Software Development Technology, 2023 - Present",
+        description: "Studies focused on programming, algorithms, data structures, and overall software development.",
+        technical: "Instituto Técnico Colombiano",
+        technicalPeriod: "Systems Maintenance Technician, 2021 - 2022",
+        technicalDescription: "Technical training in systems, networks, hardware and software maintenance."
       },
       projects: {
         title: "Projects",
         project1: {
-          title: "BackOffice - Sneakerverse",
-          description: "E-commerce platform for sneaker sales, with payment gateway integration and inventory management.",
+          title: "BackOffice - Kalez S.A",
+          description: "Business management system with Angular 17, Laravel, MySQL. Microservices architecture on AWS with 99.9% availability.",
           button: "View project"
         },
         project2: {
           title: "Dog Adoption App",
-          description: "Mobile application for pet adoption, with payment gateway integration and inventory management.",
+          description: "Mobile application with React Native, Express.js, MongoDB. Authentication system with Clerk and responsive design.",
           button: "View project"
         }
       },
