@@ -240,6 +240,14 @@ const ModernNavbar = () => {
   };
 
   const toggleLangDropdown = () => {
+    // En mobile (< 768px), cambiar idioma directamente sin mostrar dropdown
+    if (window.innerWidth < 768) {
+      const newLang = language === "es" ? "en" : "es";
+      setLanguage(newLang);
+      return;
+    }
+
+    // En desktop, mostrar dropdown
     const newState = !isLangDropdownOpen;
     setIsLangDropdownOpen(newState);
 
@@ -252,6 +260,13 @@ const ModernNavbar = () => {
   };
 
   const toggleThemeDropdown = () => {
+    // En mobile (< 768px), cambiar tema directamente sin mostrar dropdown
+    if (window.innerWidth < 768) {
+      toggleTheme();
+      return;
+    }
+
+    // En desktop, mostrar dropdown
     const newState = !isThemeDropdownOpen;
     setIsThemeDropdownOpen(newState);
 
@@ -493,26 +508,26 @@ const ModernNavbar = () => {
       {/* Overlay del menú de pantalla completa */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[100] hidden"
+        className="fixed inset-0 z-[100] hidden flex-col md:flex-row"
         style={{ display: "none" }}
       >
         {/* Panel izquierdo - Gradiente con logo */}
         <div
           ref={leftPanelRef}
-          className="w-full md:w-1/2 h-1/3 md:h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden"
+          className="w-full md:w-1/2 h-auto md:h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden py-8 md:py-0"
         >
           {/* Logo con título en el menú */}
           <div ref={logoRef} className="relative z-10 text-center">
             <div className="flex flex-col items-center">
               <div
-                className="text-white text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-bold leading-none"
+                className="text-white text-[50px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-bold leading-none"
                 style={{ fontFamily: "ui-monospace, SFMono-Regular, monospace" }}
               >
                 Luis Vera
               </div>
               <div className="flex items-center gap-2 md:gap-4 mt-2 md:mt-4">
                 <div className="h-[1px] w-10 md:w-20 bg-white/30"></div>
-                <div className="text-white/60 text-sm md:text-lg lg:text-xl font-light tracking-widest uppercase">
+                <div className="text-white/60 text-base md:text-lg lg:text-xl font-light tracking-widest uppercase">
                   Desarrollador FullStack
                 </div>
                 <div className="h-[1px] w-10 md:w-20 bg-white/30"></div>
@@ -524,7 +539,7 @@ const ModernNavbar = () => {
         {/* Panel derecho - Navegación */}
         <div
           ref={rightPanelRef}
-          className="w-full md:w-1/2 h-2/3 md:h-full bg-white dark:bg-gray-900 flex flex-col relative"
+          className="w-full md:w-1/2 flex-1 md:h-full bg-white dark:bg-gray-900 flex flex-col relative"
         >
           {/* Botón de cerrar */}
           <button
@@ -535,8 +550,8 @@ const ModernNavbar = () => {
           </button>
 
           {/* Navegación principal */}
-          <div className="flex-1 flex flex-col justify-center px-6 sm:px-12 lg:px-20">
-            <nav className="space-y-3 sm:space-y-4 md:space-y-6">
+          <div className="flex-1 flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-20 py-6 md:py-0">
+            <nav className="space-y-2 sm:space-y-3 md:space-y-6">
               {menuItems.map((item, index) => (
                 <div
                   key={item.href}
@@ -547,7 +562,7 @@ const ModernNavbar = () => {
                     onClick={() => handleMenuItemClick(item.href)}
                     className="group block w-full text-left"
                   >
-                    <span className="text-gray-800 dark:text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-sans tracking-tight hover:text-black dark:hover:text-gray-300 transition-colors duration-300 block">
+                    <span className="text-gray-800 dark:text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-sans tracking-tight hover:text-black dark:hover:text-gray-300 transition-colors duration-300 block">
                       {item.label}
                     </span>
                   </button>
@@ -557,7 +572,7 @@ const ModernNavbar = () => {
           </div>
 
           {/* Controles inferiores */}
-          <div className="px-6 sm:px-12 lg:px-20 pb-6 md:pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+          <div className="px-6 sm:px-8 md:px-12 lg:px-20 pb-6 md:pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             {/* Selector de idioma */}
             <button
               onClick={toggleLangDropdown}
