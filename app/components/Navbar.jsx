@@ -311,7 +311,7 @@ const ModernNavbar = () => {
         >
           {/* Nombre principal */}
           <span
-            className="font-bold text-black dark:text-white text-3xl lg:text-4xl transition-all duration-300"
+            className="font-bold text-black dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl transition-all duration-300"
             style={{ fontFamily: "ui-monospace, SFMono-Regular, monospace" }}
           >
             Luis Vera
@@ -320,7 +320,7 @@ const ModernNavbar = () => {
           {/* Separador vertical que aparece en hover */}
           <div
             className={`
-              mx-3 h-10 w-[2px] bg-black/30 dark:bg-white/30 transition-all duration-500
+              mx-2 md:mx-3 h-8 md:h-10 w-[2px] bg-black/30 dark:bg-white/30 transition-all duration-500 hidden sm:block
               ${isHovered ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"}
             `}
           />
@@ -328,43 +328,43 @@ const ModernNavbar = () => {
           {/* Subtítulo a la derecha en dos líneas */}
           <div
             className={`
-              flex flex-col justify-center transition-all duration-500 overflow-hidden
+              flex-col justify-center transition-all duration-500 overflow-hidden hidden sm:flex
               ${isHovered ? "max-w-[150px] opacity-100" : "max-w-0 opacity-0"}
             `}
           >
-            <span 
-              className="text-black/70 dark:text-white/70 text-base lg:text-lg font-light tracking-wide leading-tight whitespace-nowrap"
+            <span
+              className="text-black/70 dark:text-white/70 text-sm md:text-base lg:text-lg font-light tracking-wide leading-tight whitespace-nowrap"
               style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
             >
               Desarrollador
             </span>
-            <span 
-              className="text-black/70 dark:text-white/70 text-base lg:text-lg font-light tracking-wide leading-tight whitespace-nowrap"
+            <span
+              className="text-black/70 dark:text-white/70 text-sm md:text-base lg:text-lg font-light tracking-wide leading-tight whitespace-nowrap"
               style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
             >
-              FullStack 
+              FullStack
             </span>
           </div>
 
           {/* Línea decorativa inferior */}
           <div
             className={`
-              absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-black dark:from-white via-black/50 dark:via-white/50 to-transparent transition-all duration-500
+              absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-black dark:from-white via-black/50 dark:via-white/50 to-transparent transition-all duration-500 hidden sm:block
               ${isHovered ? "w-full opacity-100" : "w-0 opacity-0"}
             `}
           />
         </a>
 
         {/* Controles del lado derecho */}
-        <div className="flex items-center gap-4 relative">
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 relative">
           {/* Botón de idioma */}
           <div className="relative">
             <button
               data-lang-trigger
               onClick={toggleLangDropdown}
-              className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg"
+              className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg"
             >
-              <Globe className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+              <Globe className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-gray-700 dark:text-gray-300" />
             </button>
 
             {/* Dropdown de idiomas */}
@@ -411,12 +411,12 @@ const ModernNavbar = () => {
             <button
               data-theme-trigger
               onClick={toggleThemeDropdown}
-              className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 dark:text-white flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg"
+              className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-gray-100 dark:bg-gray-800 dark:text-white flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg"
             >
               {theme === "light" ? (
-                <Moon className="w-5 h-5" />
+                <Moon className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5" />
               ) : (
-                <Sun className="w-5 h-5" />
+                <Sun className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5" />
               )}
             </button>
 
@@ -479,12 +479,12 @@ const ModernNavbar = () => {
           {/* Botón del menú hamburguesa */}
           <button
             onClick={openMenu}
-            className="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg relative"
+            className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:scale-110 transition-all duration-300 hover:shadow-lg relative"
           >
-            <div className="space-y-1">
-              <div className="w-4 h-0.5 bg-current"></div>
-              <div className="w-4 h-0.5 bg-current"></div>
-              <div className="w-4 h-0.5 bg-current"></div>
+            <div className="space-y-0.5 sm:space-y-1">
+              <div className="w-3.5 sm:w-4 h-0.5 bg-current"></div>
+              <div className="w-3.5 sm:w-4 h-0.5 bg-current"></div>
+              <div className="w-3.5 sm:w-4 h-0.5 bg-current"></div>
             </div>
           </button>
         </div>
@@ -499,23 +499,23 @@ const ModernNavbar = () => {
         {/* Panel izquierdo - Gradiente con logo */}
         <div
           ref={leftPanelRef}
-          className="w-1/2 h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden"
+          className="w-full md:w-1/2 h-1/3 md:h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden"
         >
           {/* Logo con título en el menú */}
           <div ref={logoRef} className="relative z-10 text-center">
             <div className="flex flex-col items-center">
               <div
-                className="text-white text-[60px] md:text-[80px] lg:text-[100px] font-bold leading-none"
+                className="text-white text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-bold leading-none"
                 style={{ fontFamily: "ui-monospace, SFMono-Regular, monospace" }}
               >
                 Luis Vera
               </div>
-              <div className="flex items-center gap-4 mt-4">
-                <div className="h-[1px] w-20 bg-white/30"></div>
-                <div className="text-white/60 text-lg md:text-xl font-light tracking-widest uppercase">
+              <div className="flex items-center gap-2 md:gap-4 mt-2 md:mt-4">
+                <div className="h-[1px] w-10 md:w-20 bg-white/30"></div>
+                <div className="text-white/60 text-sm md:text-lg lg:text-xl font-light tracking-widest uppercase">
                   Desarrollador FullStack
                 </div>
-                <div className="h-[1px] w-20 bg-white/30"></div>
+                <div className="h-[1px] w-10 md:w-20 bg-white/30"></div>
               </div>
             </div>
           </div>
@@ -524,19 +524,19 @@ const ModernNavbar = () => {
         {/* Panel derecho - Navegación */}
         <div
           ref={rightPanelRef}
-          className="w-1/2 h-full bg-white dark:bg-gray-900 flex flex-col relative"
+          className="w-full md:w-1/2 h-2/3 md:h-full bg-white dark:bg-gray-900 flex flex-col relative"
         >
           {/* Botón de cerrar */}
           <button
             onClick={closeMenu}
-            className="absolute top-8 right-8 w-12 h-12 text-gray-800 dark:text-white flex items-center justify-center hover:scale-110 transition-all duration-300"
+            className="absolute top-4 right-4 md:top-8 md:right-8 w-10 h-10 md:w-12 md:h-12 text-gray-800 dark:text-white flex items-center justify-center hover:scale-110 transition-all duration-300 z-10"
           >
-            <X className="w-8 h-8" />
+            <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
 
           {/* Navegación principal */}
-          <div className="flex-1 flex flex-col justify-center px-12 lg:px-20">
-            <nav className="space-y-6">
+          <div className="flex-1 flex flex-col justify-center px-6 sm:px-12 lg:px-20">
+            <nav className="space-y-3 sm:space-y-4 md:space-y-6">
               {menuItems.map((item, index) => (
                 <div
                   key={item.href}
@@ -547,7 +547,7 @@ const ModernNavbar = () => {
                     onClick={() => handleMenuItemClick(item.href)}
                     className="group block w-full text-left"
                   >
-                    <span className="text-gray-800 dark:text-white text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight hover:text-black dark:hover:text-gray-300 transition-colors duration-300 block">
+                    <span className="text-gray-800 dark:text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-sans tracking-tight hover:text-black dark:hover:text-gray-300 transition-colors duration-300 block">
                       {item.label}
                     </span>
                   </button>
@@ -557,31 +557,31 @@ const ModernNavbar = () => {
           </div>
 
           {/* Controles inferiores */}
-          <div className="px-12 lg:px-20 pb-12 flex items-center justify-between">
+          <div className="px-6 sm:px-12 lg:px-20 pb-6 md:pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             {/* Selector de idioma */}
             <button
               onClick={toggleLangDropdown}
-              className="flex items-center gap-3 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors duration-300"
+              className="flex items-center gap-2 md:gap-3 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors duration-300"
             >
               <Image
                 src={getCurrentLanguage().flag}
                 alt="current language"
-                className="w-6 h-4 object-cover rounded"
+                className="w-5 h-3 md:w-6 md:h-4 object-cover rounded"
               />
-              <span className="text-lg">{getCurrentLanguage().name}</span>
+              <span className="text-sm md:text-base lg:text-lg">{getCurrentLanguage().name}</span>
             </button>
 
             {/* Toggle modo noche */}
             <button
               onClick={toggleThemeDropdown}
-              className="flex items-center gap-3 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors duration-300"
+              className="flex items-center gap-2 md:gap-3 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors duration-300"
             >
               {theme === "light" ? (
-                <Moon className="w-5 h-5" />
+                <Moon className="w-4 h-4 md:w-5 md:h-5" />
               ) : (
-                <Sun className="w-5 h-5" />
+                <Sun className="w-4 h-4 md:w-5 md:h-5" />
               )}
-              <span className="text-lg">
+              <span className="text-sm md:text-base lg:text-lg">
                 {theme === "light"
                   ? language === "es"
                     ? "Modo Oscuro"
