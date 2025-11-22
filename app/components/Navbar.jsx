@@ -292,6 +292,16 @@ const ModernNavbar = () => {
     animateThemeDropdown(false);
   };
 
+  // Funciones para los botones del fullbar (cambiar directamente sin dropdown)
+  const handleFullbarLanguageToggle = () => {
+    const newLang = language === "es" ? "en" : "es";
+    setLanguage(newLang);
+  };
+
+  const handleFullbarThemeToggle = () => {
+    toggleTheme();
+  };
+
   const handleMenuItemClick = (href) => {
     closeMenu();
     setTimeout(() => {
@@ -517,20 +527,20 @@ const ModernNavbar = () => {
           className="w-full md:w-1/2 h-auto md:h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden py-8 md:py-0"
         >
           {/* Logo con título en el menú */}
-          <div ref={logoRef} className="relative z-10 text-center">
+          <div ref={logoRef} className="relative z-10 text-center px-4">
             <div className="flex flex-col items-center">
               <div
-                className="text-white text-[50px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-bold leading-none"
+                className="text-white text-[60px] sm:text-[70px] md:text-[80px] lg:text-[100px] font-bold leading-none"
                 style={{ fontFamily: "ui-monospace, SFMono-Regular, monospace" }}
               >
                 Luis Vera
               </div>
-              <div className="flex items-center gap-2 md:gap-4 mt-2 md:mt-4">
-                <div className="h-[1px] w-10 md:w-20 bg-white/30"></div>
-                <div className="text-white/60 text-base md:text-lg lg:text-xl font-light tracking-widest uppercase">
+              <div className="flex items-center gap-3 md:gap-4 mt-3 md:mt-4">
+                <div className="h-[1px] w-12 md:w-20 bg-white/30"></div>
+                <div className="text-white/60 text-lg md:text-lg lg:text-xl font-light tracking-widest uppercase">
                   Desarrollador FullStack
                 </div>
-                <div className="h-[1px] w-10 md:w-20 bg-white/30"></div>
+                <div className="h-[1px] w-12 md:w-20 bg-white/30"></div>
               </div>
             </div>
           </div>
@@ -575,7 +585,7 @@ const ModernNavbar = () => {
           <div className="px-6 sm:px-8 md:px-12 lg:px-20 pb-6 md:pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             {/* Selector de idioma */}
             <button
-              onClick={toggleLangDropdown}
+              onClick={handleFullbarLanguageToggle}
               className="flex items-center gap-2 md:gap-3 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors duration-300"
             >
               <Image
@@ -588,7 +598,7 @@ const ModernNavbar = () => {
 
             {/* Toggle modo noche */}
             <button
-              onClick={toggleThemeDropdown}
+              onClick={handleFullbarThemeToggle}
               className="flex items-center gap-2 md:gap-3 text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors duration-300"
             >
               {theme === "light" ? (
